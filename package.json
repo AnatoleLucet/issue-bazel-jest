@@ -1,0 +1,20 @@
+{
+  "name": "node-jenkins-app-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "ibazel": "ibazel",
+    "jest": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bazel/ibazel": "^0.10.3",
+    "@bazel/typescript": "^0.42.1",
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "typescript": "^3.7.2"
+  },
+  "devDependencies": {}
+}

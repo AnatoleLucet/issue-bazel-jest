@@ -1,0 +1,28 @@
+load("@npm_bazel_typescript//:index.bzl", "ts_library")
+load("//:rules/jest.bzl", "jest_test")
+
+ts_library(
+    name = "src",
+    srcs = glob(["*.ts"]),
+    deps = [
+	"@npm//:node_modules"
+    ]
+)
+
+filegroup(
+    name = "js_src",
+    srcs = [":src"],
+    output_group = "es5_sources",
+)
+
+jest_test(
+    name = "test",
+    srcs = [":js_src"],
+    jest_config = "//:jest.config.js",
+    tags = [
+        "no-bazelci-windows",
+    ],
+    deps = [
+        "@npm//:node_modules"
+    ],
+)
